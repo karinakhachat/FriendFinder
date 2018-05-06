@@ -11,11 +11,11 @@ app.post("/api/friends", function(req, res) {
     // This works because of our body-parser middleware
     var newPerson = req.body;
     for(i = 0; i < friends.length; i++){
-        for (k = 0; k < friends[i].scores.length;i++){
-            friends[i].scores[k] //find absolute value jquery google math object
-            req.body.scores[k]
-            function getSum(total, num) {
-                return total + num;
+        for (k = 0; k < friends[i].scores.length;k++){
+            var existingFriendScore = friends[i].scores[k] //find absolute value jquery google math object
+            var newFriendScore =  newPerson.scores[k]
+            function getSum(existingFriendScore, newFriendScore) {
+                return existingFriendScore + newFriendScore;
             }
             function myFunction(item) {
                 var sum = numbers.reduce(getSum);
@@ -31,7 +31,7 @@ app.post("/api/friends", function(req, res) {
    
     console.log(newPerson);
 
-        res.json(newReservation);
+        res.json(newPerson);
     console.log(newPerson)
 
 });
